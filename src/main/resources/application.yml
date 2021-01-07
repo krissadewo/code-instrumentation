@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: listing4
+  jackson:
+    default-property-inclusion: non_null
+  datasource:
+    data-username: sa
+    data-password: password
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+opentracing:
+  jaeger:
+    const-sampler:
+      decision: true
+    enabled: true
+    log-spans: true
+    udp-sender:
+      port: 6831
+      host: localhost
+    service-name: listing4
+  spring:
+    cloud:
+      jdbc:
+        enabled: true
