@@ -27,13 +27,8 @@
 
     </appender>
 
-    <appender name="logStashAppendar" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>localhost:5044</destination>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
-    </appender>
-
     <root level="TRACE">
-        <appender-ref ref="logStashAppendar"/>
+        <appender-ref ref="fileAppender"/>
     </root>
 
 </configuration>
